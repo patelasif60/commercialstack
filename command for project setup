@@ -1,0 +1,63 @@
+Project setup Command
+
+ npm install -g express-generator
+ express --view=pug commercialStack
+ cd commercialStack/
+ npm install 
+ DEBUG=commercialstack:* npm start
+ node app.js
+ npm start
+ npm install body-parser
+
+
+
+*************************************************************************************************
+set router as per request means api route, web route, and all
+
+you need tu put app.use('/', indexrouter); this syntex for create common route file where you can include diffrent route folder and route them  for example
+
+const apirouter = require('./api/index');
+router.use('/api', apirouter);
+
+means you include api route folder and use their folder routes.
+*********************************************************************
+
+Mongo
+
+First you need to create user on mongo db 
+
+mongod --port 27017 --dbpath /var/lib/mongodb
+mongosh --port 27017
+
+	use admin
+	db.createUser(
+	{
+		user: "root",
+		pwd: password, // or cleartext password
+		roles: [
+			{ role: "userAdminAnyDatabase", db: "admin" },
+			{ role: "readWriteAnyDatabase", db: "admin" }
+		]
+	})
+	Exit
+ 
+
+
+
+After create user you need to 
+
+Set Up a New Connection on Robo 3T
+https://help.scalegrid.io/docs/mongodb-connections-gui-robo-3t
+
+npm install mongodb
+
+set variable in .env
+MONGO_URI='mongo+srv://<user>:<pass>@<host>:<port>/<database>?<connection options>'
+
+*****************************************************************************************
+set up env file
+
+
+
+
+
