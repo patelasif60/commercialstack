@@ -40,10 +40,16 @@ mongosh --port 27017
 		]
 	})
 	Exit
- 
 
-
-
+	db.createUser(
+...     {
+.....           user: "root",
+.....           pwd: "password",
+.....           roles: [
+.....                   { role: "userAdmin", db: "commercialstack"}
+					   ]
+		}
+	)
 After create user you need to 
 
 Set Up a New Connection on Robo 3T
@@ -53,6 +59,9 @@ npm install mongodb
 
 set variable in .env
 MONGO_URI='mongo+srv://<user>:<pass>@<host>:<port>/<database>?<connection options>'
+
+mongoose document 
+https://mongoosejs.com/docs/documents.html
 
 *****************************************************************************************
 set up env file
